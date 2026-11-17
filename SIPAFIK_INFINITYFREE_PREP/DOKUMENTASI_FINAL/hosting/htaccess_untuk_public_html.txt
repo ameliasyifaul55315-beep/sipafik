@@ -1,0 +1,9 @@
+# Dipakai HANYA jika hosting tidak mengizinkan document root diarahkan ke folder "public".
+# Letakkan proyek di folder DI LUAR public_html (mis. /home/USER/sipafik), lalu isi public_html dengan:
+#   - isi folder "public" milik proyek (index.php, .htaccess, sipafik/, favicon.ico, robots.txt)
+#   - ubah 2 baris path di public_html/index.php menjadi:
+#       require __DIR__.'/../sipafik/vendor/autoload.php';
+#       $app = require_once __DIR__.'/../sipafik/bootstrap/app.php';
+#     dan baris maintenance:
+#       if (file_exists($maintenance = __DIR__.'/../sipafik/storage/framework/maintenance.php')) {
+# Dengan susunan ini .env, vendor, dan kode aplikasi TIDAK dapat diunduh lewat browser.
